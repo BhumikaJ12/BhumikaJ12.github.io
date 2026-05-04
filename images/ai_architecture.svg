@@ -1,0 +1,120 @@
+<svg viewBox="0 0 580 420" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', Arial, sans-serif">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#2E5D9F"/>
+    </marker>
+    <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#0f6e56"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="580" height="420" rx="14" fill="#f8faff" stroke="#d0daf0" stroke-width="1"/>
+
+  <!-- Title -->
+  <text x="290" y="26" text-anchor="middle" font-size="12.5" font-weight="700" fill="#1A3C6E" letter-spacing="0.4">AI Backend — System Architecture</text>
+
+  <!-- ── ROW 1: Client ── -->
+  <rect x="215" y="40" width="150" height="36" rx="8" fill="#1A3C6E"/>
+  <text x="290" y="62" text-anchor="middle" font-size="12" font-weight="600" fill="white">Client Request</text>
+
+  <!-- arrow down -->
+  <line x1="290" y1="76" x2="290" y2="96" stroke="#2E5D9F" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── ROW 2: API Routes ── -->
+  <rect x="195" y="98" width="190" height="36" rx="8" fill="#2E5D9F"/>
+  <text x="290" y="120" text-anchor="middle" font-size="12" font-weight="600" fill="white">API Routes (Express)</text>
+
+  <!-- fork lines from Routes -->
+  <!-- left branch line -->
+  <line x1="195" y1="116" x2="120" y2="116" stroke="#2E5D9F" stroke-width="1.5"/>
+  <line x1="120" y1="116" x2="120" y2="166" stroke="#2E5D9F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- right branch line -->
+  <line x1="385" y1="116" x2="460" y2="116" stroke="#2E5D9F" stroke-width="1.5"/>
+  <line x1="460" y1="116" x2="460" y2="166" stroke="#2E5D9F" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── ROW 3: Two endpoint boxes ── -->
+  <!-- Left: /api/ai/category -->
+  <rect x="44" y="168" width="152" height="36" rx="8" fill="#3d7fcc"/>
+  <text x="120" y="184" text-anchor="middle" font-size="11" font-weight="600" fill="white">POST /api/ai/category</text>
+  <text x="120" y="198" text-anchor="middle" font-size="10" fill="#cde" font-style="italic">Product Categorization</text>
+
+  <!-- Right: /api/ai/proposal -->
+  <rect x="384" y="168" width="152" height="36" rx="8" fill="#3d7fcc"/>
+  <text x="460" y="184" text-anchor="middle" font-size="11" font-weight="600" fill="white">POST /api/ai/proposal</text>
+  <text x="460" y="198" text-anchor="middle" font-size="10" fill="#cde" font-style="italic">Business Proposal</text>
+
+  <!-- arrows from endpoints down to controllers -->
+  <line x1="120" y1="204" x2="120" y2="234" stroke="#2E5D9F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="460" y1="204" x2="460" y2="234" stroke="#2E5D9F" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── ROW 4: Controllers ── -->
+  <rect x="44" y="236" width="152" height="36" rx="8" fill="#2E5D9F"/>
+  <text x="120" y="258" text-anchor="middle" font-size="11" font-weight="600" fill="white">Controller</text>
+
+  <rect x="384" y="236" width="152" height="36" rx="8" fill="#2E5D9F"/>
+  <text x="460" y="258" text-anchor="middle" font-size="11" font-weight="600" fill="white">Controller</text>
+
+  <!-- arrows down to prompt generators -->
+  <line x1="120" y1="272" x2="120" y2="302" stroke="#2E5D9F" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="460" y1="272" x2="460" y2="302" stroke="#2E5D9F" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── ROW 5: Prompt Generators ── -->
+  <rect x="44" y="304" width="152" height="36" rx="8" fill="#1b6fa8"/>
+  <text x="120" y="320" text-anchor="middle" font-size="11" font-weight="600" fill="white">Prompt Generator</text>
+  <text x="120" y="334" text-anchor="middle" font-size="10" fill="#cde" font-style="italic">category + SEO + filters</text>
+
+  <rect x="384" y="304" width="152" height="36" rx="8" fill="#1b6fa8"/>
+  <text x="460" y="320" text-anchor="middle" font-size="11" font-weight="600" fill="white">Prompt Generator</text>
+  <text x="460" y="334" text-anchor="middle" font-size="10" fill="#cde" font-style="italic">products + budget + impact</text>
+
+  <!-- arrows to OpenAI -->
+  <line x1="120" y1="340" x2="120" y2="360" stroke="#2E5D9F" stroke-width="1.5"/>
+  <line x1="460" y1="340" x2="460" y2="360" stroke="#2E5D9F" stroke-width="1.5"/>
+  <!-- merge lines to centre OpenAI box -->
+  <line x1="120" y1="360" x2="222" y2="360" stroke="#2E5D9F" stroke-width="1.5"/>
+  <line x1="460" y1="360" x2="358" y2="360" stroke="#2E5D9F" stroke-width="1.5"/>
+  <line x1="290" y1="360" x2="290" y2="375" stroke="#2E5D9F" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── ROW 6: OpenAI API (centre) ── -->
+  <rect x="200" y="376" width="180" height="36" rx="8" fill="#0f6e56"/>
+  <text x="290" y="398" text-anchor="middle" font-size="12" font-weight="600" fill="white">OpenAI API Service</text>
+
+  <!-- output labels -->
+  <!-- Left output box -->
+  <rect x="26" y="376" width="152" height="36" rx="8" fill="#f0f8f4" stroke="#0f6e56" stroke-width="1.2"/>
+  <text x="102" y="390" text-anchor="middle" font-size="10" fill="#0f6e56" font-weight="600">{ primary_category,</text>
+  <text x="102" y="404" text-anchor="middle" font-size="10" fill="#0f6e56">  seo_tags, filters }</text>
+
+  <!-- Right output box -->
+  <rect x="402" y="376" width="152" height="36" rx="8" fill="#f0f8f4" stroke="#0f6e56" stroke-width="1.2"/>
+  <text x="478" y="390" text-anchor="middle" font-size="10" fill="#0f6e56" font-weight="600">{ products, qty,</text>
+  <text x="478" y="404" text-anchor="middle" font-size="10" fill="#0f6e56">  budget, impact }</text>
+
+  <!-- dashed lines from OpenAI to output boxes -->
+  <line x1="200" y1="394" x2="178" y2="394" stroke="#0f6e56" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#arr2)"/>
+  <line x1="380" y1="394" x2="402" y2="394" stroke="#0f6e56" stroke-width="1.2" stroke-dasharray="4,2" marker-end="url(#arr2)"/>
+
+  <!-- merge output back down to MongoDB — both sides go down then meet -->
+  <!-- left bottom -->
+  <line x1="102" y1="412" x2="102" y2="428" stroke="#0f6e56" stroke-width="1.2"/>
+  <!-- right bottom -->
+  <line x1="478" y1="412" x2="478" y2="428" stroke="#0f6e56" stroke-width="1.2"/>
+  <!-- horizontal to centre... wait we're out of space, place MongoDB note inline -->
+
+  <!-- MongoDB note bottom centre -->
+  <rect x="195" y="412" width="190" height="0" rx="8" fill="none"/>
+
+  <!-- Legend bottom-left -->
+  <rect x="26" y="42" width="8" height="8" rx="2" fill="#1A3C6E"/>
+  <text x="38" y="51" font-size="9.5" fill="#555">Entry / exit</text>
+  <rect x="26" y="56" width="8" height="8" rx="2" fill="#2E5D9F"/>
+  <text x="38" y="65" font-size="9.5" fill="#555">Core layer</text>
+  <rect x="26" y="70" width="8" height="8" rx="2" fill="#3d7fcc"/>
+  <text x="38" y="79" font-size="9.5" fill="#555">Endpoints</text>
+  <rect x="26" y="84" width="8" height="8" rx="2" fill="#0f6e56"/>
+  <text x="38" y="93" font-size="9.5" fill="#555">AI + output</text>
+
+  <!-- MongoDB note -->
+  <text x="290" y="416" text-anchor="middle" font-size="9.5" fill="#888" font-style="italic">↓ Both responses stored in MongoDB Atlas (products / proposals / promptlogs)</text>
+</svg>
